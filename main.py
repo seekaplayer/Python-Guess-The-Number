@@ -44,7 +44,7 @@ def start_game(game):
 
         # the user guesses the random number that was generated
         guess = is_a_number("Guess the number that was generated: ")
-
+        # checks to see if the guessed number matches the random number that was generated
         while guess != random_number:
             if guess < random_number:
                 guess = is_a_number("That choice is to low: ")
