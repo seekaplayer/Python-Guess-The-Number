@@ -1,4 +1,5 @@
 # imports
+# imports random module
 import random
 
 # this function creates a random number based on the two numbers the user chose
@@ -46,13 +47,15 @@ def start_game(game):
         guess = is_a_number("Guess the number that was generated: ")
         # checks to see if the guessed number matches the random number that was generated
         while guess != random_number:
+            # if the number is to high then it will inform the user
             if guess < random_number:
                 guess = is_a_number("That choice is to low: ")
+            # if the number is to low then it will inform the user
             else:
                 guess = is_a_number("That was choice was to high: ")
-
+        # announces that the user has won the number guessing game
         print(f"Congratulations your choice of {guess} was correct!")
-
+        # restarts the game
         game = restart_game()
 
 
