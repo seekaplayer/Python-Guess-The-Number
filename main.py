@@ -22,10 +22,15 @@ def is_num_less(user, value):
 
 
 def restart_game():
-    choice = input("You only have two choices! P or Q: ")
+    choice = input(
+        "Do you want to play again? Press: P to Play or Press: Q to Quit: "
+    ).lower()
     while choice != "p" and choice != "q":
-        choice = input("You only have two choices! p or q!: ")
-    return choice == "p"
+        choice = input("You only have two choices! P or Q!: ").lower()
+    if choice == "p":
+        return choice
+    else:
+        SystemExit()
 
 
 # this function starts the game
