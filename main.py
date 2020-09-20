@@ -21,6 +21,7 @@ def is_num_less(user, value):
         return is_a_number("Choose a higher number: ")
 
 
+# checks to see if the user wants to restart the game or quit
 def restart_game():
     choice = input(
         "Do you want to play again? Press: P to Play or Press: Q to Quit: "
@@ -30,39 +31,29 @@ def restart_game():
     if choice == "p":
         return choice
     else:
-        SystemExit()
+        exit()
 
 
-# this function starts the game
-def start_game(game):
-
-    while game:
-        # gets the user inputs
-        user_min_num = is_a_number("Please provide a low number: ")
-        user_max_num = is_a_number("Please Provide a high number: ")
-
-        # check if the high number is lower then the lower number
-        while user_max_num <= user_min_num:
-            user_max_num = is_num_less(user_max_num, user_min_num)
-
-        # generates a random number
-        random_number = random_numbers(user_min_num, user_max_num)
-
-        # the user guesses the random number that was generated
-        guess = is_a_number("Guess the number that was generated: ")
-        # checks to see if the guessed number matches the random number that was generated
-        while guess != random_number:
-            # if the number is to high then it will inform the user
-            if guess < random_number:
-                guess = is_a_number("That choice is to low: ")
-            # if the number is to low then it will inform the user
-            else:
-                guess = is_a_number("That was choice was to high: ")
-        # announces that the user has won the number guessing game
-        print(f"Congratulations your choice of {guess} was correct!")
-        # restarts the game
-        game = restart_game()
-
-
-# starts the game when the script is loaded
-start_game(True)
+while True:
+    # gets the user inputs
+    user_min_num = is_a_number("Please provide a low number: ")
+    user_max_num = is_a_number("Please Provide a high number: ")
+    # check if the high number is lower then the lower number
+    while user_max_num <= user_min_num:
+        user_max_num = is_num_less(user_max_num, user_min_num)
+    # generates a random number
+    random_number = random_numbers(user_min_num, user_max_num)
+    # the user guesses the random number that was generated
+    guess = is_a_number("Guess the number that was generated: ")
+    # checks to see if the guessed number matches the random number that was generated
+    while guess != random_number:
+        # if the number is to high then it will inform the user
+        if guess < random_number:
+            guess = is_a_number("That choice is to low: ")
+        # if the number is to low then it will inform the user
+        else:
+            guess = is_a_number("That was choice was to high: ")
+    # announces that the user has won the number guessing game
+    print(f"Congratulations your choice of {guess} was correct!")
+    # restarts the game
+    restart_game()
