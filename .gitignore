@@ -184,7 +184,7 @@ dmypy.json
 .vscode/launch.json
 .vscode/extensions.json
 *.code-workspace
-pythonenv3.8
+pythonenv3.8/
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history

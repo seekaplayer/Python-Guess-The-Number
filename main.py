@@ -1,4 +1,3 @@
-# testing1234
 # imports
 # imports random module
 import random
