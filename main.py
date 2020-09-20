@@ -2,11 +2,6 @@
 # imports random module
 import random
 
-# this function creates a random number based on the two numbers the user chose
-def random_numbers(min_num, max_num):
-    return random.randint(min_num, max_num)
-
-
 # this function checks to see if the input is a number
 def is_a_number(msg):
     user = input(msg)
@@ -42,7 +37,7 @@ while True:
     while user_max_num <= user_min_num:
         user_max_num = is_num_less(user_max_num, user_min_num)
     # generates a random number
-    random_number = random_numbers(user_min_num, user_max_num)
+    random_number = random.randint(user_min_num, user_max_num)
     # the user guesses the random number that was generated
     guess = is_a_number("Guess the number that was generated: ")
     # checks to see if the guessed number matches the random number that was generated
